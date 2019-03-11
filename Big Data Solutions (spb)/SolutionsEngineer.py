@@ -22,7 +22,7 @@ for exchange, timestamps in trades.items():
     indexOfLastInWindow = 0
 
     for i, timestamp in enumerate(timestamps):
-        while indexOfLastInWindow < len(timestamps) and timestamps[indexOfLastInWindow] - timestamps[i] < 1000:
+        while indexOfLastInWindow < len(timestamps) and timestamps[indexOfLastInWindow] - timestamp < 1000:
             indexOfLastInWindow += 1
         if indexOfLastInWindow - i > ans:
             ans = indexOfLastInWindow - i
